@@ -24,8 +24,55 @@
 
   function init(){
     var target = document.querySelector('calculadora-seag') || document.body;
-    target.innerHTML = '<div class="calc-wrap"><h2 class="calc-title">¿Cuánto cuesta proteger tu alquiler?</h2><div class="slider-row"><span class="slider-label">Alquiler mensual</span><input type="range" id="seag-slider" min="300" max="3000" step="50" value="700"><span class="slider-val" id="seag-sliderVal">700 €/mes</span></div><div class="tasa-label">Tasa de la póliza:</div><div class="tasa-row"><button class="tasa-btn active" data-tasa="3">3%<span>desde</span></button><button class="tasa-btn" data-tasa="4">4%<span>riesgo medio</span></button><button class="tasa-btn" data-tasa="5">5%<span>alto riesgo</span></button></div><div class="cards"><div class="card"><div class="card-label">Renta anual</div><div class="card-val" id="seag-rentaAnual">8.400 €</div><div class="card-sub">12 meses</div></div><div class="card"><div class="card-label">Tasa aplicada</div><div class="card-val" id="seag-tasaVal">3%</div><div class="card-sub">sobre renta anual</div></div></div><div class="cards"><div class="highlight"><div class="card-label">Pago anual</div><div class="card-val" id="seag-polizaAnual">252,00 €</div><div class="card-sub">pago único</div></div><div class="highlight"><div class="card-label">Pago mensual</div><div class="card-val" id="seag-polizaMes">22,75 €</div><div class="card-sub">/ mes (tasa +0,25%)</div></div></div><div class="ahorro">Pagando anual ahorras <strong id="seag-ahorro">21,00 €</strong> al año</div><p class="nota">Cálculo orientativo. Para un precio exacto según tu caso, consúltame:</p><a class="wa-btn" href="https://wa.me/34649123326?text=Hola%20David%2C%20me%20gustar%C3%ADa%20saber%20el%20precio%20exacto%20de%20la%20p%C3%B3liza%20para%20mi%20alquiler." target="_blank"><svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Consultar precio exacto por WhatsApp</a></div>';
+    target.innerHTML = '<div class="calc-wrap"><h2 class="calc-title">¿Cuánto cuesta proteger tu alquiler?</h2><div class="slider-row"><span class="slider-label">Alquiler mensual</span><input type="range" id="seag-slider" min="300" max="3000" step="50" value="700"><span class="slider-val" id="seag-sliderVal">700 €/mes</span></div><div class="tasa-label">Tasa de la póliza:</div><div class="tasa-row"><button class="tasa-btn active" data-tasa="3">3%<span>desde</span></button><button class="tasa-btn" data-tasa="4">4%<span>riesgo medio</span></button><button class="tasa-btn" data-tasa="5">5%<span>alto riesgo</span></button></div><div class="cards"><div class="card"><div class="card-label">Renta anual</div><div class="card-val" id="seag-rentaAnual">8.400 €</div><div class="card-sub">12 meses</div></div><div class="card"><div class="card-label">Tasa aplicada</div><div class="card-val" id="seag-tasaVal">3%</div><div class="card-sub">sobre renta anual</div></div></div><div class="cards"><div class="highlight"><div class="card-label">Pago anual</div><div class="card-val" id="seag-polizaAnual">252,00 €</div><div class="card-sub">pago único</div></div><div class="highlight"><div class="card-label">Pago mensual</div><div class="card-val" id="seag-polizaMes">22,75 €</div><div class="card-sub">/ mes (tasa +0,25%)</div></div></div><div class="ahorro">Pagando anual ahorras <strong id="seag-ahorro">21,00 €</strong> al año</div><p class="nota">Cálculo orientativo. Para un precio exacto según tu caso, consúltame:</p><a class="wa-btn" href="https://wa.me/34649123326?text=Hola%20David%2C%20me%20gustar%C3%ADa%20saber%20el%20precio%20exacto%20de%20la%20p%C3%B3liza%20para%20mi%20alquiler." target="_blank" rel="noopener" data-phone="34649123326" data-text="Hola David, me gustaría saber el precio exacto de la póliza para mi alquiler."><svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Consultar precio exacto por WhatsApp</a></div>';
     document.getElementById('seag-slider').addEventListener('input', update);
     document.querySelectorAll('.tasa-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
-        document.querySelectorAll('.tasa-btn').for
+        document.querySelectorAll('.tasa-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        tasa = parseFloat(btn.dataset.tasa);
+        update();
+      });
+    });
+    var waBtn = document.querySelector('.wa-btn');
+    waBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      openWhatsApp(waBtn.getAttribute('data-phone'), waBtn.getAttribute('data-text'));
+    });
+    update();
+  }
+
+  // Abre WhatsApp de la forma mas fiable segun el dispositivo:
+  //  - Ordenador: va directo a WhatsApp Web con el chat y el mensaje ya preparados
+  //    (evita la pagina intermedia de wa.me "Abrir aplicacion / Continuar en WhatsApp Web").
+  //  - Movil: usa el esquema whatsapp:// para que el sistema deje elegir entre
+  //    WhatsApp y WhatsApp Business si hay las dos instaladas. Si ninguna app
+  //    responde en ~1,5 s, se recurre al enlace wa.me habitual.
+  function openWhatsApp(phone, text){
+    var msg = encodeURIComponent(text);
+    var ua = navigator.userAgent || '';
+    var isMobile = /Android|iPhone|iPad|iPod|Windows Phone|Mobile/i.test(ua) ||
+      (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); // iPad con iPadOS
+    var webUrl = 'https://wa.me/' + phone + '?text=' + msg;
+
+    if (!isMobile) {
+      window.open('https://web.whatsapp.com/send?phone=' + phone + '&text=' + msg, '_blank', 'noopener');
+      return;
+    }
+
+    var fallback = setTimeout(function(){
+      if (!document.hidden) { window.location.href = webUrl; }
+    }, 1500);
+    function onHide(){
+      if (document.hidden) { clearTimeout(fallback); document.removeEventListener('visibilitychange', onHide); }
+    }
+    document.addEventListener('visibilitychange', onHide);
+    window.location.href = 'whatsapp://send?phone=' + phone + '&text=' + msg;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
